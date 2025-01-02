@@ -180,18 +180,19 @@ const Hero = () => {
 
     setup();
 
-    // return (_) => {
-    //   window.removeEventListener('resize', resize);
-    //   window.removeEventListener('mousedown', onMouseDown);
-    //   document.removeEventListener('touchstart', onTouchStart);
-    // };
+    return (_) => {
+      window.removeEventListener('resize', resize);
+      window.removeEventListener('mousedown', onMouseDown);
+      document.removeEventListener('touchstart', onTouchStart);
+    };
   }, [canvas, window.innerWidth, window.innerHeight]);
 
   return (
     <div className='head-wrapper'>
       <section className='container hero'>
         <canvas id='canvas' ref={canvas}></canvas>
-        <div className='hero-content mulish-reg'>
+        <div className='hero-content font-mulish'>
+          <div className='md:text-red-500'>test</div>
           <h4>
             Hi, I'm Adrian Jimenez. A passionate Software Engineer driven by the
             unconventional.

@@ -22,37 +22,42 @@ export const MenuItem = ({
   item: string;
   children?: React.ReactNode;
 }) => {
+  // Commented out classes below are the stock classes from the original code
   return (
     <div onMouseEnter={() => setActive(item)} className='relative pr-4'>
       <motion.p
         transition={{ duration: 0.3 }}
-        className='cursor-pointer text-black hover:opacity-[0.9] dark:text-white'
+        className='cursor-pointer text-white hover:opacity-[0.9]'
       >
         {item}
       </motion.p>
       {active !== null && (
-        <motion.div
-          initial={{ opacity: 0, scale: 0.85, y: 10 }}
-          animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={transition}
-        >
-          {active === item && (
-            <div className='absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4'>
-              <motion.div
-                transition={transition}
-                layoutId='active' // layoutId ensures smooth animation
-                className='bg-white dark:bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-black/[0.2] dark:border-white/[0.2] shadow-xl'
+        <div>
+          <motion.div
+            className='absolute top-[calc(100%_+_1.2rem)]'
+            // className=''
+            initial={{ opacity: 0, scale: 0.85, y: 10 }}
+            animate={{ opacity: 1, scale: 1.0, y: 0 }}
+            transition={transition}
+          >
+            {active === item && (
+              <div
+                className='absolute left-[2rem] transform -translate-x-1/2 pt-4'
+                // className='absolute top-[calc(100%_+_1.2rem)] left-1/2 transform -translate-x-1/2 pt-4'
               >
                 <motion.div
-                  layout // layout ensures smooth animation
-                  className='w-max h-full p-4'
+                  transition={transition}
+                  layoutId='active'
+                  className='bg-black backdrop-blur-sm rounded-2xl overflow-hidden border border-white/[0.2] shadow-xl'
                 >
-                  {children}
+                  <motion.div layout className='w-max h-full p-4'>
+                    {children}
+                  </motion.div>
                 </motion.div>
-              </motion.div>
-            </div>
-          )}
-        </motion.div>
+              </div>
+            )}
+          </motion.div>
+        </div>
       )}
     </div>
   );
@@ -67,8 +72,8 @@ export const Menu = ({
 }) => {
   return (
     <nav
-      onMouseLeave={() => setActive(null)} // resets the state
-      className='relative rounded-full border border-transparent dark:bg-black dark:border-white/[0.2] bg-white shadow-input flex justify-center space-x-4 px-8 py-6 '
+      onMouseLeave={() => setActive(null)}
+      className='relative rounded-full border border-white/[0.2] bg-black shadow-input flex justify-center space-x-4 px-8 py-6'
     >
       {children}
     </nav>
@@ -96,12 +101,8 @@ export const ProductItem = ({
         className='flex-shrink-0 rounded-md shadow-2xl'
       />
       <div>
-        <h4 className='text-xl font-bold mb-1 text-black dark:text-white'>
-          {title}
-        </h4>
-        <p className='text-neutral-700 text-sm max-w-[10rem] dark:text-neutral-300'>
-          {description}
-        </p>
+        <h4 className='text-xl font-bold mb-1 text-white'>{title}</h4>
+        <p className='text-neutral-300 text-sm max-w-[10rem]'>{description}</p>
       </div>
     </a>
   );
@@ -109,7 +110,7 @@ export const ProductItem = ({
 
 export const HoveredLink = ({ children, ...rest }: any) => {
   return (
-    <a {...rest} className='text-neutral-700 dark:text-neutral-200 '>
+    <a {...rest} className='text-neutral-200'>
       {children}
     </a>
   );

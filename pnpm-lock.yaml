@@ -27,7 +27,7 @@ importers:
         specifier: ^2.1.1
         version: 2.1.1
       framer-motion:
-        specifier: ^11.3.7
+        specifier: ^11.15.0
         version: 11.15.0(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       react:
         specifier: ^18.3.1
@@ -36,7 +36,7 @@ importers:
         specifier: ^18.3.1
         version: 18.3.1(react@18.3.1)
       tailwind-merge:
-        specifier: ^2.4.0
+        specifier: ^2.6.0
         version: 2.6.0
       tailwindcss:
         specifier: ^3.4.17

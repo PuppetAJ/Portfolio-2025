@@ -1,4 +1,5 @@
 import { useRef, useEffect } from 'react';
+import { TypewriterEffectSmoothDemo } from '../Typewriter/Typewriter';
 
 const Hero = () => {
   // CREDIT FOR ORIGINAL CODE:
@@ -192,7 +193,10 @@ const Hero = () => {
       <section className='container hero'>
         <canvas id='canvas' ref={canvas}></canvas>
         <div className='hero-content font-mulish'>
-          <div className='md:text-red-500'>test</div>
+          <div className='md:text-red-500'></div>
+          <div>
+            <TypewriterEffectSmoothDemo></TypewriterEffectSmoothDemo>
+          </div>
           <h4>
             Hi, I'm Adrian Jimenez. A passionate Software Engineer driven by the
             unconventional.

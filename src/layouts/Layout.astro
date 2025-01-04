@@ -5,24 +5,28 @@ const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
     <meta
-      name="description"
-      content="Adrian Jimenez | Full-Stack Web Developer"
+      name='description'
+      content='Adrian Jimenez | Full-Stack Web Developer'
     />
     <meta
-      name="keywords"
-      content="HTML, CSS, JavaScript, Web Development, Full-Stack, Software Engineer"
+      name='keywords'
+      content='HTML, CSS, JavaScript, Web Development, Full-Stack, Software Engineer'
     />
-    <meta name="author" content="Adrian Jimenez" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class='font-mulish'>
-		<slot />
-	</body>
+    <meta name='author' content='Adrian Jimenez' />
+    <meta name='viewport' content='width=device-width' />
+    <link
+      rel='icon'
+      type='image/svg+xml'
+      href='/resources/Favicon/favicon.ico'
+    />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class='font-mulish'>
+    <slot />
+  </body>
 </html>
